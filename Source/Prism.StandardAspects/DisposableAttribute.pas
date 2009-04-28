@@ -97,7 +97,7 @@ begin
     newMethod.Visibility := Visibility.Public;
     newMethod.Virtual := VirtualMode.Virtual;
     newMethod.Final := true;
-
+     
     newMethod.SetBody(Services, method begin
       unquote(disposeWithParam);
       GC.SuppressFinalize(unquote<Object>(this));
