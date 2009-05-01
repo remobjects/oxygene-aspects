@@ -9,7 +9,7 @@
     <Configuration Condition="'$(Configuration)' == ''">Release</Configuration>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <ProjectGuid>{FDFA9E51-2441-4785-9599-44A17D1B72C7}</ProjectGuid>
-    <RunPostBuildEvent>㏑</RunPostBuildEvent>
+    <RunPostBuildEvent>㏔</RunPostBuildEvent>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DefineConstants>DEBUG;TRACE;</DefineConstants>
@@ -26,7 +26,7 @@
       <HintPath>$(Framework)\mscorlib.dll</HintPath>
     </Reference>
     <Reference Include="RemObjects.Oxygene.Cirrus">
-      <HintPath>RemObjects.Oxygene.Cirrus.dll</HintPath>
+      <HintPath>$(ProgramFiles)\CodeGear\Delphi Prism\Reference Assemblies\RemObjects.Oxygene.Cirrus.dll</HintPath>
       <Name>RemObjects.Oxygene.Cirrus.dll</Name>
       <Private>True</Private>
     </Reference>
@@ -59,6 +59,7 @@
     <Compile Include="CheckDisposedAttribute.pas" />
     <Compile Include="DisposableAttribute.pas" />
     <Compile Include="EqualsAttribute.pas" />
+    <Compile Include="NotifyPropertyChangedAttribute.pas" />
     <Compile Include="Properties\AssemblyInfo.pas" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
