@@ -31,7 +31,7 @@
     </Reference>
     <ProjectReference Include="..\Prism.StandardAspects\Prism.StandardAspects.oxygene">
       <Project>{FDFA9E51-2441-4785-9599-44A17D1B72C7}</Project>
-      <HintPath>..\Prism.StandardAspects\bin\Debug\Prism.StandardAspects.dll</HintPath>
+      <HintPath>$(Project)\..\Prism.StandardAspects\bin\Debug\Prism.StandardAspects.dll</HintPath>
       <Name>Prism.StandardAspects</Name>
     </ProjectReference>
     <Reference Include="RemObjects.Oxygene.Cirrus">
