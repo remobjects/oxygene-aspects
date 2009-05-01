@@ -19,8 +19,7 @@
 // When you apply the ExcludeFromEqualsAspectAttribute on a property it will not be included in the Equals calculation.
 // When you apply the IncludeParentInEqualsAspectAttribut on the class it will include the parents Equal method. (TODO)
 
-// TODO: Implement inherited call to Equals
-//       Differentiate between value properties and reference properties ( = vs .Equals) 
+// TODO: Differentiate between value properties and reference properties ( = vs .Equals) 
 
 namespace Prism.StandardAspects;
 
@@ -34,11 +33,12 @@ uses
 
 type
   [AttributeUsage(AttributeTargets.Class)]
-  EqualsAttribute = public class(Attribute, ITypeInterfaceDecorator, ITypeImplementationDecorator)
+  EqualsAttribute = public class(Attribute, ITypeImplementationDecorator)
   private
+    [Aspect:AutoInjectIntoTarget]
+    method fCombineHashCode(objectMembers: array of Object): Int32;
   protected
   public
-    method HandleInterface(Services: RemObjects.Oxygene.Cirrus.IServices; aType: RemObjects.Oxygene.Cirrus.ITypeDefinition);
     method HandleImplementation(Services: RemObjects.Oxygene.Cirrus.IServices; aType: RemObjects.Oxygene.Cirrus.ITypeDefinition);
   end;
 
@@ -56,16 +56,52 @@ type
 
 implementation
 
-uses 
-  RemObjects.Oxygene.Cirrus.Statements;
-
-method EqualsAttribute.HandleInterface(Services: RemObjects.Oxygene.Cirrus.IServices; aType: RemObjects.Oxygene.Cirrus.ITypeDefinition);
+method EqualsAttribute.fCombineHashCode(objectMembers: array of Object): Int32;
 begin
-  
+  result := 23;
+  if assigned(objectMembers) then
+  for i: Int32 := 0 to objectMembers.Length - 1 do
+  begin
+    var om := objectMembers[i];
+    if om <> nil then
+    begin
+      result := result * 37 + om.GetHashCode;
+    end;
+  end;
 end;
 
 method EqualsAttribute.HandleImplementation(Services: RemObjects.Oxygene.Cirrus.IServices; aType: RemObjects.Oxygene.Cirrus.ITypeDefinition);
 begin
+  //GetHashcode
+  var hashCodeMethod := aType.AddMethod('GetHashcode', Services.GetType('System.Int32'), false);
+  hashCodeMethod.Visibility := Visibility.Public;
+  hashCodeMethod.Virtual := VirtualMode.Override;
+  var hashCodeMethodBegin := new BeginStatement(); // begin
+  var larrayValue := new ArrayValue();
+  hashCodeMethodBegin.Add(new AssignmentStatement(hashCodeMethod.GetResult, 23));
+  for i: Int32 := 0 to aType.PropertyCount - 1 do
+  begin
+    var includeProperty := true;
+    var locVal := aType.GetProperty(i);
+    for y: Int32 := 0 to locVal.AttributeCount - 1 do
+    begin
+      var att := locVal.GetAttribute(y);
+      if att.Type = Services.GetType('Prism.StandardAspects.ExcludeFromEqualsAspectAttribute') then
+      begin
+        includeProperty := false;
+      end;
+    end;
+    if includeProperty then
+    begin
+      larrayValue.Add(new ProcValue(new SelfValue(), locVal.ReadMethod));
+    end;
+  end;
+  hashCodeMethodBegin.Add(new AssignmentStatement(hashCodeMethod.GetResult, new ProcValue(new SelfValue, 'fCombineHashCode', larrayValue)));
+  hashCodeMethod.SetBody(Services, method 
+                                 begin  
+                                   unquote(hashCodeMethodBegin);
+                                 end);
+  //Equals
   var equalsMethod := aType.AddMethod('Equals', Services.GetType('System.Boolean'), false);
   var equalsMethodParam := equalsMethod.AddParameter('obj', ParameterModifier.In, Services.GetType('System.Object'));
   equalsMethod.Visibility := Visibility.Public;
@@ -100,8 +136,7 @@ begin
     var att := aType.GetAttribute(i);
     if att.Type = Services.GetType('Prism.StandardAspects.IncludeParentInEqualsAspectAttribute') then
     begin
-      //TODO: add inherited call to Equals when the IncludeParentInEqualsAspectAttribute is applied to the class
-      //lBegin.Add(new AssignmentStatement(equalsMethod.GetResult, new ProcValue(new SelfValue(), equalsMethod, true, [equalsMethod.getParameter('obj')])));  
+      lBegin.Add(new AssignmentStatement(equalsMethod.GetResult, new ProcValue(new SelfValue(), equalsMethod, true, [equalsMethod.getParameter('obj')])));  
     end;
   end;
   equalsMethod.SetBody(Services, method 
