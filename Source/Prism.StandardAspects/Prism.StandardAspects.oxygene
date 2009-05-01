@@ -26,7 +26,7 @@
       <HintPath>$(Framework)\mscorlib.dll</HintPath>
     </Reference>
     <Reference Include="RemObjects.Oxygene.Cirrus">
-      <HintPath>$(ProgramFiles)\CodeGear\Delphi Prism\Reference Assemblies\RemObjects.Oxygene.Cirrus.dll</HintPath>
+      <HintPath>RemObjects.Oxygene.Cirrus.dll</HintPath>
       <Name>RemObjects.Oxygene.Cirrus.dll</Name>
       <Private>True</Private>
     </Reference>
