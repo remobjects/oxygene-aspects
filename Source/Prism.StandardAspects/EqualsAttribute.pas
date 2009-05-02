@@ -17,9 +17,10 @@
 
 // This aspect will override the Equals method and use all properties to calculate it.
 // When you apply the ExcludeFromEqualsAspectAttribute on a property it will not be included in the Equals calculation.
-// When you apply the IncludeParentInEqualsAspectAttribut on the class it will include the parents Equal method. (TODO)
+// When you apply the IncludeParentInEqualsAspectAttribute on the class it will include the parents Equal method. (TODO)
 
 // TODO: Differentiate between value properties and reference properties ( = vs .Equals) 
+// TODO: Add inherited call to GetHashCode (when IncludeParentInEqualsAspectAttribute is applied)
 
 namespace Prism.StandardAspects;
 
@@ -60,12 +61,30 @@ method EqualsAttribute.fCombineHashCode(objectMembers: array of Object): Int32;
 begin
   result := 23;
   if assigned(objectMembers) then
-  for i: Int32 := 0 to objectMembers.Length - 1 do
   begin
-    var om := objectMembers[i];
-    if om <> nil then
+    {for each om in objectMembers do  //this does not work
     begin
-      result := result * 37 + om.GetHashCode;
+      if om <> nil then
+      begin
+        result := result * 37 + om.GetHashCode;
+      end
+      else
+      begin
+        result := result * 37;
+      end;
+    end;}
+
+    for i: Int32 := 0 to objectMembers.Length - 1 do
+    begin
+      var om := objectMembers[i];
+      if om <> nil then
+      begin
+        result := result * 37 + om.GetHashCode;
+      end
+      else
+      begin
+        result := result * 37;
+      end;
     end;
   end;
 end;
@@ -126,10 +145,14 @@ begin
         includeProperty := false;
       end;
     end;
-    if includeProperty then lBegin.Add(new IfStatement(new BinaryValue(new ProcValue(new SelfValue(), locVal.ReadMethod),
-                                               new ProcValue(new NamedLocalValue('otherObject'), locVal.ReadMethod),
-                                               BinaryOperator.NotEqual), 
-                                               new ExitStatement(False)));
+    if includeProperty then
+    begin
+      {lBegin.Add(new IfStatement(new BinaryValue(new ProcValue(new SelfValue(), locVal.ReadMethod),
+                                                 new ProcValue(new NamedLocalValue('otherObject'), locVal.ReadMethod),
+                                                 BinaryOperator.NotEqual), 
+                                                 new ExitStatement(False)));}
+      lBegin.Add(new IfStatement(new ProcValue(new ProcValue(new SelfValue(), locVal.ReadMethod), 'Equals', [new ProcValue(new NamedLocalValue('otherObject'), locVal.ReadMethod)]), nil, new ExitStatement(False)));
+    end;
   end;
   for i: Int32 := 0 to aType.AttributeCount - 1 do
   begin

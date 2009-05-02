@@ -9,7 +9,7 @@
     <Configuration Condition="'$(Configuration)' == ''">Release</Configuration>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <ProjectGuid>{1B29A181-3324-4D63-9D24-EC891CEE42C3}</ProjectGuid>
-    <RunPostBuildEvent>㏔</RunPostBuildEvent>
+    <RunPostBuildEvent>㏡</RunPostBuildEvent>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DefineConstants>DEBUG;TRACE;</DefineConstants>
