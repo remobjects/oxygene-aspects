@@ -14,6 +14,8 @@ type
   public
     [Test]
     method TestEquals;
+    [Test]
+    method TestGetHashCode;
   end;
 
   [Aspect:Equals]
@@ -35,6 +37,18 @@ begin
   Assert.IsTrue(testObj1.Equals(testObj2), 'Equals method nor working properly');
   testObj2.TestProp2 := 'other string';
   Assert.IsFalse(testObj1.Equals(testObj2), 'Equals method nor working properly');
+end;
+
+method EqualsAspectTest.TestGetHashCode;
+begin
+  var testObj1 := new Class1;
+  var testObj2 := new Class1;
+  var someString := 'Hallo';
+  testObj1.TestProp2 := someString;
+  testObj2.TestProp2 := someString;
+  var hc1 := testObj1.GetHashCode;
+  var hc2 := testObj2.GetHashCode;
+  Assert.IsTrue(hc1 = hc2, String.Format('GetHashCode method nor working properly: Hash1 : {0} Hash2 : {1}', hc1, hc2));
 end;
 
 end.

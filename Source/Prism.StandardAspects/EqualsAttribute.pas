@@ -38,6 +38,8 @@ type
   private
     [Aspect:AutoInjectIntoTarget]
     method fCombineHashCode(objectMembers: array of Object): Int32;
+    [Aspect:AutoInjectIntoTarget]
+    method fEqualsAndNotNil(object1, object2: System.Object): Boolean;
   protected
   public
     method HandleImplementation(Services: RemObjects.Oxygene.Cirrus.IServices; aType: RemObjects.Oxygene.Cirrus.ITypeDefinition);
@@ -151,7 +153,7 @@ begin
                                                  new ProcValue(new NamedLocalValue('otherObject'), locVal.ReadMethod),
                                                  BinaryOperator.NotEqual), 
                                                  new ExitStatement(False)));}
-      lBegin.Add(new IfStatement(new ProcValue(new ProcValue(new SelfValue(), locVal.ReadMethod), 'Equals', [new ProcValue(new NamedLocalValue('otherObject'), locVal.ReadMethod)]), nil, new ExitStatement(False)));
+      lBegin.Add(new IfStatement(new ProcValue(new SelfValue(), 'fEqualsAndNotNil', [new ProcValue(new SelfValue(), locVal.ReadMethod), new ProcValue(new NamedLocalValue('otherObject'), locVal.ReadMethod)]), nil, new ExitStatement(False)));
     end;
   end;
   for i: Int32 := 0 to aType.AttributeCount - 1 do
@@ -167,4 +169,17 @@ begin
                                    unquote(lBegin);
                                  end);
 end;
+method EqualsAttribute.fEqualsAndNotNil(object1, object2: System.Object): Boolean;
+begin
+  if object1 <> nil then 
+  begin
+    if object2 = nil then exit(false);
+    exit(object1.Equals(object2));
+  end
+  else
+  begin
+    if object2 = nil then exit(true);
+  end;
+end;
+
 end.
