@@ -36,7 +36,7 @@ type
 
 
   [AttributeUsage(AttributeTargets.Class)]
-  NotifyPropertyChangedAttribute = public class(System.Attribute,ITypeInterfaceDecorator,ITypeImplementationDecorator)
+  NotifyPropertyChangedAttribute = public class(System.Attribute, IBaseAspect, ITypeInterfaceDecorator, ITypeImplementationDecorator)
   private
   protected
   public

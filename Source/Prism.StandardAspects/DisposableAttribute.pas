@@ -44,7 +44,7 @@ uses
 
 type
   [AttributeUsage(AttributeTargets.Method)]
-  DisposableAttribute = public class(Attribute, IMethodImplementationDecorator, IMethodInterfaceDecorator)
+  DisposableAttribute = public class(Attribute, IBaseAspect, IMethodImplementationDecorator, IMethodInterfaceDecorator)
   public    
     method HandleImplementation(Services: RemObjects.Oxygene.Cirrus.IServices; aMethod: RemObjects.Oxygene.Cirrus.IMethodDefinition);
     method HandleInterface(Services: RemObjects.Oxygene.Cirrus.IServices; aMethod: RemObjects.Oxygene.Cirrus.IMethodDefinition);

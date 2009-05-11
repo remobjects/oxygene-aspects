@@ -34,7 +34,7 @@ uses
 
 type
   [AttributeUsage(AttributeTargets.Class)]
-  EqualsAttribute = public class(Attribute, ITypeImplementationDecorator)
+  EqualsAttribute = public class(Attribute, IBaseAspect, ITypeImplementationDecorator)
   private
     [Aspect:AutoInjectIntoTarget]
     method fCombineHashCode(objectMembers: array of Object): Int32;

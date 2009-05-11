@@ -31,7 +31,7 @@ uses
 
 type
   [AttributeUsage(AttributeTargets.Method or AttributeTargets.Property)]
-  CheckDisposedAttribute = public class(Attribute, IMethodImplementationDecorator, IPropertyImplementationDecorator)
+  CheckDisposedAttribute = public class(Attribute, IBaseAspect, IMethodImplementationDecorator, IPropertyImplementationDecorator)
   private
     method GetField(Services: RemObjects.Oxygene.Cirrus.IServices; aMethod : IMethodDefinition) : IField;
   public
