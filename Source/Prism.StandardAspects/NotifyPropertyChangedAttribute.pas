@@ -36,12 +36,11 @@ type
 
 
   [AttributeUsage(AttributeTargets.Class)]
-  NotifyPropertyChangedAttribute = public class(System.Attribute, IBaseAspect, ITypeInterfaceDecorator, ITypeImplementationDecorator)
+  NotifyPropertyChangedAttribute = public class(System.Attribute, IBaseAspect, ITypeInterfaceDecorator)
   private
   protected
   public
     method HandleInterface(Services: RemObjects.Oxygene.Cirrus.IServices; aType: RemObjects.Oxygene.Cirrus.ITypeDefinition);
-    method HandleImplementation(Services: RemObjects.Oxygene.Cirrus.IServices; aType: RemObjects.Oxygene.Cirrus.ITypeDefinition);
   end;
   
 implementation
@@ -90,8 +89,5 @@ begin
 
 end;
 
-method NotifyPropertyChangedAttribute.HandleImplementation(Services: RemObjects.Oxygene.Cirrus.IServices; aType: RemObjects.Oxygene.Cirrus.ITypeDefinition);
-begin
-end;
 
 end.
