@@ -26,7 +26,8 @@
       <HintPath>$(Framework)\mscorlib.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
-      <HintPath>$(ProgramFiles)\NUnit 2.4.8\bin\nunit.framework.dll</HintPath>
+      <HintPath>$(Project)\..\lib\nunit.framework.dll</HintPath>
+      <Name>nunit.framework.dll</Name>
       <Private>True</Private>
     </Reference>
     <ProjectReference Include="..\Prism.StandardAspects\Prism.StandardAspects.oxygene">
@@ -35,7 +36,8 @@
       <Name>Prism.StandardAspects</Name>
     </ProjectReference>
     <Reference Include="RemObjects.Oxygene.Cirrus">
-      <HintPath>$(ProgramFiles)\RemObjects Software\Oxygene\Reference Assemblies\RemObjects.Oxygene.Cirrus.dll</HintPath>
+      <HintPath>$(ProgramFiles)\CodeGear\Delphi Prism\Bin\RemObjects.Oxygene.Cirrus.dll</HintPath>
+      <Name>RemObjects.Oxygene.Cirrus.dll</Name>
       <Private>True</Private>
     </Reference>
     <Reference Include="System">
