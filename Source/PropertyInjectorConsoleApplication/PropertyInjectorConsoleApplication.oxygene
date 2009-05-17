@@ -1,21 +1,20 @@
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
   <PropertyGroup>
-    <ProjectGuid>{3C88FA53-9025-4640-AEF1-AFAD3C723087}</ProjectGuid>
-    <RootNamespace>NotifyPropertyChangedWindowsApplication</RootNamespace>
-    <OutputType>WinExe</OutputType>
-    <AssemblyName>NotifyPropertyChangedWindowsApplication</AssemblyName>
+    <RootNamespace>PropertyInjectorConsoleApplication</RootNamespace>
+    <OutputType>Exe</OutputType>
+    <AssemblyName>PropertyInjectorConsoleApplication</AssemblyName>
     <AllowGlobals>False</AllowGlobals>
     <AllowLegacyOutParams>False</AllowLegacyOutParams>
     <AllowLegacyCreate>False</AllowLegacyCreate>
     <ApplicationIcon>Properties\App.ico</ApplicationIcon>
-    <ProjectTypeGuids>{89896941-7261-4476-8385-4DA3CE9FDB83};{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{656346D9-4656-40DA-A068-22D5425D4639}</ProjectTypeGuids>
     <Configuration Condition="'$(Configuration)' == ''">Release</Configuration>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <ProjectGuid>{7BFE241B-6AC9-46E3-A950-8719F5CA57BC}</ProjectGuid>
     <RunPostBuildEvent>㏡</RunPostBuildEvent>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <OutputPath>.\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;</DefineConstants>
+    <OutputPath>.\bin\Debug</OutputPath>
     <GeneratePDB>True</GeneratePDB>
     <GenerateMDB>True</GenerateMDB>
   </PropertyGroup>
@@ -27,23 +26,19 @@
     <Reference Include="mscorlib">
       <HintPath>$(Framework)\mscorlib.dll</HintPath>
     </Reference>
-    <Reference Include="PresentationCore">
-      <HintPath>$(ProgramFiles)\Reference Assemblies\Microsoft\Framework\v3.0\PresentationCore.dll</HintPath>
-    </Reference>
-    <Reference Include="PresentationFramework">
-      <HintPath>$(ProgramFiles)\Reference Assemblies\Microsoft\Framework\v3.0\PresentationFramework.dll</HintPath>
-    </Reference>
-    <ProjectReference Include="..\..\Prism.StandardAspects\Prism.StandardAspects.oxygene">
-      <Project>{FDFA9E51-2441-4785-9599-44A17D1B72C7}</Project>
-      <HintPath>$(Project)\..\..\Prism.StandardAspects\bin\Debug\Prism.StandardAspects.dll</HintPath>
-      <Name>Prism.StandardAspects</Name>
+    <ProjectReference Include="..\Prism.StandardAspects.DependencyInjection\Prism.StandardAspects.DependencyInjection.oxygene">
+      <Project>{F040DD91-4C32-4554-8995-6938B4F34AD6}</Project>
+      <HintPath>$(Project)\..\Prism.StandardAspects.DependencyInjection\bin\Debug\Prism.StandardAspects.DependencyInjection.dll</HintPath>
+      <Name>Prism.StandardAspects.DependencyInjection</Name>
     </ProjectReference>
-    <Reference Include="ReachFramework">
-      <HintPath>$(ProgramFiles)\Reference Assemblies\Microsoft\Framework\v3.0\ReachFramework.dll</HintPath>
-    </Reference>
     <Reference Include="RemObjects.Oxygene.Cirrus">
       <HintPath>$(ProgramFiles)\CodeGear\Delphi Prism\Bin\RemObjects.Oxygene.Cirrus.dll</HintPath>
       <Name>RemObjects.Oxygene.Cirrus.dll</Name>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="StructureMap">
+      <HintPath>$(Project)\..\lib\StructureMap.dll</HintPath>
+      <Name>StructureMap.dll</Name>
       <Private>True</Private>
     </Reference>
     <Reference Include="System">
@@ -58,33 +53,16 @@
     <Reference Include="System.Data.DataSetExtensions">
       <HintPath>$(ProgramFiles)\Reference Assemblies\Microsoft\Framework\v3.5\System.Data.DataSetExtensions.dll</HintPath>
     </Reference>
-    <Reference Include="System.Drawing">
-      <HintPath>$(Framework)\System.Drawing.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Windows.Forms">
-      <HintPath>$(Framework)\System.Windows.Forms.dll</HintPath>
-    </Reference>
     <Reference Include="System.Xml">
       <HintPath>$(Framework)\System.Xml.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq">
       <HintPath>$(ProgramFiles)\Reference Assemblies\Microsoft\Framework\v3.5\System.Xml.Linq.dll</HintPath>
     </Reference>
-    <Reference Include="UIAutomationProvider">
-      <HintPath>$(ProgramFiles)\Reference Assemblies\Microsoft\Framework\v3.0\UIAutomationProvider.dll</HintPath>
-    </Reference>
-    <Reference Include="UIAutomationTypes">
-      <HintPath>$(ProgramFiles)\Reference Assemblies\Microsoft\Framework\v3.0\UIAutomationTypes.dll</HintPath>
-    </Reference>
-    <Reference Include="WindowsBase">
-      <HintPath>$(ProgramFiles)\Reference Assemblies\Microsoft\Framework\v3.0\WindowsBase.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ApplicationDefinition Include="App.xaml" />
-    <Compile Include="App.xaml.pas" />
-    <Compile Include="Domain\Employee.pas" />
-    <None Include="Properties\App.ico" />
+    <Compile Include="Program.pas" />
+    <Content Include="Properties\App.ico" />
     <Compile Include="Properties\AssemblyInfo.pas" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -94,10 +72,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
     </None>
     <Compile Include="Properties\Settings.Designer.pas" />
-    <Page Include="Window1.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Compile Include="Window1.xaml.pas" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\RemObjects Software\Oxygene\RemObjects.Oxygene.targets" />
 </Project>
