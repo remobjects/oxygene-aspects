@@ -11,7 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{35
 EndProject
 Project("{656346D9-4656-40DA-A068-22D5425D4639}") = "Prism.StandardAspects.DependencyInjection", "Prism.StandardAspects.DependencyInjection\Prism.StandardAspects.DependencyInjection.oxygene", "{F040DD91-4C32-4554-8995-6938B4F34AD6}"
 EndProject
-Project("{656346D9-4656-40DA-A068-22D5425D4639}") = "PropertyInjectorConsoleApplication", "PropertyInjectorConsoleApplication\PropertyInjectorConsoleApplication.oxygene", "{7BFE241B-6AC9-46E3-A950-8719F5CA57BC}"
+Project("{656346D9-4656-40DA-A068-22D5425D4639}") = "PropertyInjectorConsoleApplication", "Examples\PropertyInjectorConsoleApplication\PropertyInjectorConsoleApplication.oxygene", "{7BFE241B-6AC9-46E3-A950-8719F5CA57BC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

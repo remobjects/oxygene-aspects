@@ -26,9 +26,9 @@
     <Reference Include="mscorlib">
       <HintPath>$(Framework)\mscorlib.dll</HintPath>
     </Reference>
-    <ProjectReference Include="..\Prism.StandardAspects.DependencyInjection\Prism.StandardAspects.DependencyInjection.oxygene">
+    <ProjectReference Include="..\..\Prism.StandardAspects.DependencyInjection\Prism.StandardAspects.DependencyInjection.oxygene">
       <Project>{F040DD91-4C32-4554-8995-6938B4F34AD6}</Project>
-      <HintPath>$(Project)\..\Prism.StandardAspects.DependencyInjection\bin\Debug\Prism.StandardAspects.DependencyInjection.dll</HintPath>
+      <HintPath>..\..\Prism.StandardAspects.DependencyInjection\bin\Debug\Prism.StandardAspects.DependencyInjection.dll</HintPath>
       <Name>Prism.StandardAspects.DependencyInjection</Name>
     </ProjectReference>
     <Reference Include="RemObjects.Oxygene.Cirrus">
@@ -37,7 +37,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="StructureMap">
-      <HintPath>$(Project)\..\lib\StructureMap.dll</HintPath>
+      <HintPath>$(Project)\..\..\lib\StructureMap.dll</HintPath>
       <Name>StructureMap.dll</Name>
       <Private>True</Private>
     </Reference>
