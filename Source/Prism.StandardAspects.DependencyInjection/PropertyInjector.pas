@@ -25,8 +25,7 @@ uses
 type
 
   [AttributeUsage(AttributeTargets.Property)]
-  PropertyDependencyInjectorAttribute=public class(System.Attribute,IBaseAspect, 
-    IPropertyInterfaceDecorator)
+  PropertyDependencyInjectorAttribute=public class(System.Attribute,IPropertyInterfaceDecorator)
 
   private
 
