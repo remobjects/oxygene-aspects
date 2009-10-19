@@ -15,6 +15,8 @@ type
     method TestNoPublicConstructor;
     [Test]
     method TestInstancesAreSame;
+    [Test]
+    method TestInstanceIsNotNull;
   end;
 
   [Aspect:Singleton]
@@ -48,5 +50,13 @@ begin
 
   Assert.AreSame(s1, s2);
 end;
+
+method SingletonAspectTest.TestInstanceIsNotNull;
+begin
+  var instance := Singleton.Instance;
+
+  Assert.IsNotNull(instance);
+end;
+
 
 end.

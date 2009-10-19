@@ -43,6 +43,7 @@ type
     const instanceGetterName = 'getInstance';
     const instancePropertyName = 'Instance';
     method CheckForSingleNoParameterConstructor(Services: IServices; ctors: Array of IMethod): Boolean;
+    method CheckForAvailableFieldGetterAndPropertyNames(Services: IServices; aType: ITypeDefinition): Boolean;
   public
     method HandleInterface(Services: IServices; aType: ITypeDefinition);
     method HandleImplementation(Services: IServices; aMethod: IMethodDefinition);
@@ -52,8 +53,10 @@ implementation
 
 method SingletonAttribute.HandleInterface(Services: IServices; aType: ITypeDefinition);
 begin
-  var constructors: Array of IMethod := aType.GetConstructors();
+  if not CheckForAvailableFieldGetterAndPropertyNames(Services, aType) then
+    exit;
 
+  var constructors: Array of IMethod := aType.GetConstructors();
   if not CheckForSingleNoParameterConstructor(Services, constructors) then
     exit;
 
@@ -100,6 +103,31 @@ begin
   if not (ctors[0].ParameterCount = 0) then
   begin
     Services.EmitError('Singleton Aspect can only be applied to classes with a parameterless constructor.');    
+    exit false;
+  end;
+
+  exit true;
+end;
+
+method SingletonAttribute.CheckForAvailableFieldGetterAndPropertyNames(Services: IServices; aType: ITypeDefinition): Boolean;
+begin
+  if Assigned(aType.GetStaticField(instanceFieldName)) then
+  begin
+    Services.EmitError(String.Format('Singleton Aspect can only be applied to classes without a field called "{0}".', instanceFieldName));
+    exit false;
+  end;
+
+  if (aType.GetStaticMethods(instanceGetterName).Length > 0)
+    or (aType.GetMethods(instanceGetterName).Length > 0) then
+  begin
+    Services.EmitError(String.Format('Singleton Aspect can only be applied to classes without a method called "{0}".', instanceGetterName));
+    exit false;
+  end;
+
+  if (aType.GetProperties(instancePropertyName).Length > 0)
+    or (aType.GetStaticProperties(instancePropertyName).Length > 0) then
+  begin
+    Services.EmitError(String.Format('Singleton Aspect can only be applied to classes without a property called "{0}".', instancePropertyName));
     exit false;
   end;
 
