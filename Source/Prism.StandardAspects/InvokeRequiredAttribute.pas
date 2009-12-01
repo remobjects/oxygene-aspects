@@ -47,14 +47,17 @@ begin
   var selfVal := new SelfValue();
   var dl := new ProcPtrValue(selfVal, aMethod.Name);
   aMethod.SetBody(Services, method begin
+    var lAct: Action := method 
+      begin 
+        Aspects.OriginalBody;
+      end;
     if unquote<Control>(selfVal).InvokeRequired then 
     begin       
-      //unquote<Control>(new SelfValue()).Invoke(method begin end);  
-      //TODO!!!!!!!!!
+      unquote<Control>(new SelfValue()).Invoke(lAct);
     end
     else
     begin
-      Aspects.OriginalBody;   
+      lAct;
     end;
   end);
 end;
