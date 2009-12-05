@@ -44,7 +44,7 @@ implementation
 
 method InvokeRequiredAttribute.HandleImplementation(Services: RemObjects.Oxygene.Cirrus.IServices; aMethod: RemObjects.Oxygene.Cirrus.IMethodDefinition);
 begin
- { var selfVal := new SelfValue();
+  var selfVal := new SelfValue();
   var dl := new ProcPtrValue(selfVal, aMethod.Name);
   aMethod.SetBody(Services, method begin
     var lAct: Action := method 
@@ -59,7 +59,7 @@ begin
     begin
       lAct;
     end;
-  end);}
+  end);
 end;
 
 method InvokeRequiredAttribute.HandleInterface(Services: RemObjects.Oxygene.Cirrus.IServices; aMethod: RemObjects.Oxygene.Cirrus.IMethodDefinition);
