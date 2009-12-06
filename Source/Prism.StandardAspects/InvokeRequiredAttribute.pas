@@ -45,20 +45,27 @@ implementation
 method InvokeRequiredAttribute.HandleImplementation(Services: RemObjects.Oxygene.Cirrus.IServices; aMethod: RemObjects.Oxygene.Cirrus.IMethodDefinition);
 begin
   var selfVal := new SelfValue();
-  aMethod.SetBody(Services, method begin
-    var lAct: Action := method 
-      begin 
-        Aspects.OriginalBody;
+  if aMethod.Result = nil then //method has no return value
+  begin
+    aMethod.SetBody(Services, method begin
+      var lAct: Action := method 
+        begin 
+          Aspects.OriginalBody;
+        end;
+      if unquote<Control>(selfVal).InvokeRequired then 
+      begin       
+        unquote<Control>(selfVal).Invoke(lAct);
+      end
+      else
+      begin
+        lAct;
       end;
-    if unquote<Control>(selfVal).InvokeRequired then 
-    begin       
-      unquote<Control>(selfVal).Invoke(lAct);
-    end
-    else
-    begin
-      lAct;
-    end;
-  end);
+    end);
+  end
+  else //method has a return value
+  begin
+    Services.EmitError('The InvokeRequired Attribute can only be used on methods that have no return value');
+  end;
 end;
 
 method InvokeRequiredAttribute.HandleInterface(Services: RemObjects.Oxygene.Cirrus.IServices; aMethod: RemObjects.Oxygene.Cirrus.IMethodDefinition);
