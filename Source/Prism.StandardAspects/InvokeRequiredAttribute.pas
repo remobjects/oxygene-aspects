@@ -45,7 +45,6 @@ implementation
 method InvokeRequiredAttribute.HandleImplementation(Services: RemObjects.Oxygene.Cirrus.IServices; aMethod: RemObjects.Oxygene.Cirrus.IMethodDefinition);
 begin
   var selfVal := new SelfValue();
-  var dl := new ProcPtrValue(selfVal, aMethod.Name);
   aMethod.SetBody(Services, method begin
     var lAct: Action := method 
       begin 
@@ -53,7 +52,7 @@ begin
       end;
     if unquote<Control>(selfVal).InvokeRequired then 
     begin       
-      unquote<Control>(new SelfValue()).Invoke(lAct);
+      unquote<Control>(selfVal).Invoke(lAct);
     end
     else
     begin
