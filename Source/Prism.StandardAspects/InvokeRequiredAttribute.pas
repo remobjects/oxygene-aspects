@@ -15,11 +15,9 @@
 // CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-// This aspect can be applied on methods of a winform control (form, panel, ...)
+// This aspect can be applied on methods of a winforms control (form, panel, ...)
 // It will check if an invoke is required and if needed it will call the methods body using the .invoke method
 // This allows that the method can be called safely from other threads.
-
-// NOT YET FINISHED!!!!!
 
 namespace Prism.StandardAspects;
 
