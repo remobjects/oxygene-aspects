@@ -38,6 +38,8 @@ type
     method HandleInterface(Services: RemObjects.Oxygene.Cirrus.IServices; aMethod: RemObjects.Oxygene.Cirrus.IMethodDefinition);
   end;
 
+  ObjectArray = array of Object;
+
 implementation
 
 method InvokeRequiredAttribute.HandleImplementation(Services: RemObjects.Oxygene.Cirrus.IServices; aMethod: RemObjects.Oxygene.Cirrus.IMethodDefinition);
@@ -45,7 +47,8 @@ begin
   var selfVal := new SelfValue();
   if aMethod.Result = nil then //method has no return value
   begin
-    aMethod.SetBody(Services, method begin
+    aMethod.SetBody(Services, method 
+    begin
       var lAct: Action := method 
         begin 
           Aspects.OriginalBody;
@@ -62,7 +65,19 @@ begin
   end
   else //method has a return value
   begin
-    Services.EmitError('The InvokeRequired Attribute can only be used on methods that have no return value');
+   { var retVal := new ResultValue;
+    var prms := aMethod.GetParameterArrayValue;
+    aMethod.SetBody(Services, method 
+    begin
+      if unquote<Control>(selfVal).InvokeRequired then 
+      begin 
+         var temp := unquote<Control>(selfVal).Invoke(unquote<&Delegate>(new ProcPtrValue(selfVal, aMethod.Name)), unquote<ObjectArray>(prms)); 
+         var locVal := new NamedLocalValue('temp');
+         unquote(new AssignmentStatement(retval, new UnaryValue(locVal, UnaryOperator.Cast, aMethod.Result)));
+      end
+      else
+        Aspects.OriginalBody;
+    end);}
   end;
 end;
 
