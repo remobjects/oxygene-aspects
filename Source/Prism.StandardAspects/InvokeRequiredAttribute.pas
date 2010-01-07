@@ -65,19 +65,18 @@ begin
   end
   else //method has a return value
   begin
-   { var retVal := new ResultValue;
+    var retVal := new ResultValue;
     var prms := aMethod.GetParameterArrayValue;
     aMethod.SetBody(Services, method 
     begin
       if unquote<Control>(selfVal).InvokeRequired then 
       begin 
          var temp := unquote<Control>(selfVal).Invoke(unquote<&Delegate>(new ProcPtrValue(selfVal, aMethod.Name)), unquote<ObjectArray>(prms)); 
-         var locVal := new NamedLocalValue('temp');
-         unquote(new AssignmentStatement(retval, new UnaryValue(locVal, UnaryOperator.Cast, aMethod.Result)));
+         unquote(new AssignmentStatement(retval, new UnaryValue(new NamedLocalValue('temp'), UnaryOperator.Cast, aMethod.Result)));
       end
       else
         Aspects.OriginalBody;
-    end);}
+    end);
   end;
 end;
 
