@@ -30,11 +30,13 @@ uses
 
 type
   [AttributeUsage(AttributeTargets.Class)]
-  CloneableAttribute = public class(Attribute, IBaseAspect, ITypeImplementationDecorator)
+  CloneableAttribute = public class(Attribute, IBaseAspect, ITypeImplementationDecorator, ITypeInterfaceDecorator)
   private
+    cloneMethod: IMethodDefinition;
   protected
   public
     method HandleImplementation(Services: IServices; aType: ITypeDefinition);
+    method HandleInterface(Services: IServices; aType: ITypeDefinition);
   end;
 
   [AttributeUsage(AttributeTargets.Property)]
@@ -48,13 +50,6 @@ implementation
 method CloneableAttribute.HandleImplementation(Services: IServices; aType: ITypeDefinition);
 begin
   var cloneableInterface := Services.GetType('System.ICloneable');
-  if not aType.IsAssignableTo(cloneableInterface) then aType.AddInterface(cloneableInterface);  
-  var cloneMethod := aType.AddMethod('Clone', nil, false);
-  cloneMethod.Visibility := Visibility.Public;
-  cloneMethod.Virtual := VirtualMode.Virtual;
-  cloneMethod.Final := true;
-  cloneMethod.Result := Services.GetType('System.Object');
-
   var lBegin := new BeginStatement(); // begin
   var lclone := new LocalVariable('localClone', aType); 
   lBegin.Locals.Add(lclone);
@@ -84,6 +79,10 @@ begin
         begin
           lBegin.Add(new StandaloneStatement(new ProcValue(lcloneVal, locVal.WriteMethod,[new ProcValue(new SelfValue(), locVal.ReadMethod)])));
         end;
+      end
+      else
+      begin
+        Services.EmitWarning('This property was not added to the Clone method: ' + aType.Name + '.' + locVal.Name);
       end;
     end;
   end;
@@ -92,6 +91,17 @@ begin
   begin
     unquote(lBegin);        
   end);
+end;
+
+method CloneableAttribute.HandleInterface(Services: IServices; aType: ITypeDefinition);
+begin
+  var cloneableInterface := Services.GetType('System.ICloneable');
+  if not aType.IsAssignableTo(cloneableInterface) then aType.AddInterface(cloneableInterface); 
+  cloneMethod := aType.AddMethod('Clone', nil, false);
+  cloneMethod.Visibility := Visibility.Public;
+  cloneMethod.Virtual := VirtualMode.Virtual;
+  cloneMethod.Final := true;
+  cloneMethod.Result := Services.GetType('System.Object');
 end;
 
 end.
