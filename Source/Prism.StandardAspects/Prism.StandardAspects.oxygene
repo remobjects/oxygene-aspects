@@ -61,7 +61,6 @@
   <ItemGroup>
     <Compile Include="CheckDisposedAttribute.pas" />
     <Compile Include="CloneableAttribute.pas">
-      <SubType>Code</SubType>
     </Compile>
     <Compile Include="DisposableAttribute.pas" />
     <Compile Include="EqualsAttribute.pas" />

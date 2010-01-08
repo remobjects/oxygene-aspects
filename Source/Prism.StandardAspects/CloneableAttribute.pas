@@ -74,13 +74,16 @@ begin
     end;
     if includeProperty then
     begin
-      if locVal.Type.IsAssignableTo(cloneableInterface) then
+      if locVal.WriteMethod <> nil then
       begin
-        lBegin.Add(new StandaloneStatement(new ProcValue(lcloneVal, locVal.WriteMethod,[new ProcValue(new ProcValue(new SelfValue(), locVal.ReadMethod), 'Clone')])));
-      end
-      else
-      begin
-        lBegin.Add(new StandaloneStatement(new ProcValue(lcloneVal, locVal.WriteMethod,[new ProcValue(new SelfValue(), locVal.ReadMethod)])));
+        if locVal.Type.IsAssignableTo(cloneableInterface) then
+        begin
+          lBegin.Add(new StandaloneStatement(new ProcValue(lcloneVal, locVal.WriteMethod,[new ProcValue(new ProcValue(new SelfValue(), locVal.ReadMethod), 'Clone')])));
+        end
+        else
+        begin
+          lBegin.Add(new StandaloneStatement(new ProcValue(lcloneVal, locVal.WriteMethod,[new ProcValue(new SelfValue(), locVal.ReadMethod)])));
+        end;
       end;
     end;
   end;
