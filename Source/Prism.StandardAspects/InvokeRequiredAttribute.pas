@@ -55,7 +55,7 @@ begin
         end;
       if unquote<Control>(selfVal).InvokeRequired then 
       begin       
-        unquote<Control>(selfVal).Invoke(lAct);
+        unquote<Control>(selfVal).BeginInvoke(lAct);
       end
       else
       begin
