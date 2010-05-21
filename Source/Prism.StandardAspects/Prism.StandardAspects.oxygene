@@ -1,4 +1,5 @@
-﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
   <PropertyGroup>
     <RootNamespace>Prism.StandardAspects</RootNamespace>
     <OutputType>Library</OutputType>
@@ -14,6 +15,7 @@
     <AllowUnsafeCode>False</AllowUnsafeCode>
     <DelphiCompatibility>False</DelphiCompatibility>
     <DelphiDivide>False</DelphiDivide>
+    <Company />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DefineConstants>DEBUG;TRACE;</DefineConstants>
