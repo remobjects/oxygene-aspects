@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="ftp://moshine.com/logging" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FTP" replaceMatchingFiles="True" userName="0083796|moshinecom0" savePWD="True" userPWD="AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAU40JzlP8W0i/bH5z7u2IkwAAAAACAAAAAAAQZgAAAAEAACAAAACZdkK7yUaYgD48zynn+ss6wgKtLRARwhXibo0MDep0/AAAAAAOgAAAAAIAACAAAAC7IExC/Q4ArbBwqqm4AhySo/boentwiKdbOdGlyRc9/xAAAAA5BLbI9ZFutwHEXH5DprU0QAAAADlJWFeD1ixs+oSPg3VSOX6zgFW2aoxQJhl4Yz8YlF6kt2TwMHgYsSwZgeIOWlv0lWegRt1B5md5/VUuVMNWcL4=" SelectedForPublish="True">
+    <file relUrl="Web.config" publishTime="05/29/2010 19:36:24" />
+    <file relUrl="bin/Microsoft.Practices.EnterpriseLibrary.Common.dll" publishTime="04/16/2010 14:16:58" />
+    <file relUrl="bin/Microsoft.Practices.ServiceLocation.dll" publishTime="04/16/2010 14:16:58" />
+    <file relUrl="bin/Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll" publishTime="04/16/2010 14:16:58" />
+    <file relUrl="bin/Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging.dll" publishTime="04/16/2010 14:16:58" />
+    <file relUrl="bin/EnterpriseLibraryWebApplication.dll" publishTime="05/29/2010 19:39:37" />
+    <file relUrl="bin/Moshine.EnterpriseLibrary.dll" publishTime="05/28/2010 12:48:53" />
+    <file relUrl="bin/Moshine.EnterpriseLibrary.Aspects.dll" publishTime="05/29/2010 15:24:30" />
+    <file relUrl="bin/Microsoft.Practices.EnterpriseLibrary.Logging.dll" publishTime="04/16/2010 14:16:58" />
+    <file relUrl="bin/Microsoft.Practices.Unity.dll" publishTime="04/16/2010 13:42:32" />
+    <file relUrl="bin/Microsoft.Practices.Unity.Interception.dll" publishTime="04/16/2010 13:42:32" />
+    <file relUrl="Global.asax" publishTime="05/29/2010 19:34:49" />
+    <file relUrl="Default.aspx" publishTime="05/29/2010 19:38:35" />
+  </publishProfile>
+</publishData>
