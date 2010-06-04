@@ -76,6 +76,12 @@ begin
 
       var setValue:=new ParamValue(0);
 
+      if(propertyDefinition.ImplicitField)then
+      begin
+        propertyDefinition.CreateImplicitField;
+      end;
+
+
       propertyDefinition.WriteMethod.SetBody(services,method
         begin
           Aspects.OriginalBody;

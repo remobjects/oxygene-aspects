@@ -1,4 +1,5 @@
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
   <PropertyGroup>
     <RootNamespace>Prism.StandardAspects.DependencyInjection</RootNamespace>
     <OutputType>Library</OutputType>
@@ -10,6 +11,7 @@
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <ProjectGuid>{F040DD91-4C32-4554-8995-6938B4F34AD6}</ProjectGuid>
     <RunPostBuildEvent>㏡</RunPostBuildEvent>
+    <Company />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DefineConstants>DEBUG;TRACE;</DefineConstants>
@@ -23,7 +25,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="mscorlib">
-      <HintPath>$(Framework)\mscorlib.dll</HintPath>
+      <HintPath>mscorlib.dll</HintPath>
     </Reference>
     <ProjectReference Include="..\Prism.StandardAspects\Prism.StandardAspects.oxygene">
       <Project>{FDFA9E51-2441-4785-9599-44A17D1B72C7}</Project>
@@ -36,24 +38,24 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="StructureMap">
-      <HintPath>$(Project)\..\lib\StructureMap.dll</HintPath>
+      <HintPath>..\lib\StructureMap.dll</HintPath>
       <Name>StructureMap.dll</Name>
       <Private>True</Private>
     </Reference>
     <Reference Include="System">
-      <HintPath>$(Framework)\System.dll</HintPath>
+      <HintPath>System.dll</HintPath>
     </Reference>
     <Reference Include="System.Core">
       <HintPath>$(ProgramFiles)\Reference Assemblies\Microsoft\Framework\v3.5\System.Core.dll</HintPath>
     </Reference>
     <Reference Include="System.Data">
-      <HintPath>$(Framework)\System.Data.dll</HintPath>
+      <HintPath>System.Data.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.DataSetExtensions">
       <HintPath>$(ProgramFiles)\Reference Assemblies\Microsoft\Framework\v3.5\System.Data.DataSetExtensions.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml">
-      <HintPath>$(Framework)\System.Xml.dll</HintPath>
+      <HintPath>System.Xml.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq">
       <HintPath>$(ProgramFiles)\Reference Assemblies\Microsoft\Framework\v3.5\System.Xml.Linq.dll</HintPath>
@@ -70,6 +72,9 @@
     </None>
     <Compile Include="Properties\Settings.Designer.pas" />
     <Compile Include="PropertyInjector.pas" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\RemObjects Software\Oxygene\RemObjects.Oxygene.targets" />
 </Project>
