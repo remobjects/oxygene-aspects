@@ -34,6 +34,7 @@ type
 
   public
     method HandleInterface(Services: IServices; aProperty: IPropertyDefinition);
+
   end;
 
 
