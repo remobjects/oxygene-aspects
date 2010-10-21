@@ -27,6 +27,12 @@
     <OutputPath>.\bin\Release</OutputPath>
     <EnableAsserts>False</EnableAsserts>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug without initial Prime' ">
+    <DefineConstants>DEBUG;TRACE;</DefineConstants>
+    <GeneratePDB>True</GeneratePDB>
+    <GenerateMDB>True</GenerateMDB>
+    <OutputPath>bin\Debug without initial Prime\</OutputPath>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="mscorlib">
     </Reference>
