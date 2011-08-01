@@ -18,6 +18,9 @@
     <OutputPath>.\bin\Debug</OutputPath>
     <GeneratePDB>True</GeneratePDB>
     <GenerateMDB>True</GenerateMDB>
+    <EnableUnmanagedDebugging>False</EnableUnmanagedDebugging>
+    <DebugClass />
+    <AssertMethodName />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <OutputPath>.\bin\Release</OutputPath>
@@ -54,6 +57,9 @@
     <Reference Include="System.Data.DataSetExtensions">
       <HintPath>$(ProgramFiles)\Reference Assemblies\Microsoft\Framework\v3.5\System.Data.DataSetExtensions.dll</HintPath>
     </Reference>
+    <Reference Include="System.Windows.Forms">
+      <HintPath>C:\Windows\Microsoft.NET\Framework\v2.0.50727\System.Windows.Forms.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml">
       <HintPath>System.Xml.dll</HintPath>
     </Reference>
@@ -64,6 +70,9 @@
   <ItemGroup>
     <Compile Include="CloneableAspectTest.pas" />
     <Compile Include="EqualsAspectTest.pas" />
+    <Compile Include="InvokeRequiredAspectTest.pas">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.pas" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -80,4 +89,8 @@
     <Folder Include="Properties\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\RemObjects Software\Oxygene\RemObjects.Oxygene.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
 </Project>
