@@ -74,7 +74,8 @@ begin
         if locVal.Type.IsAssignableTo(cloneableInterface) then
         begin
           lBegin.Add(new IfStatement(new BinaryValue(new ProcValue(new SelfValue(), locVal.ReadMethod), new NilValue() ,BinaryOperator.NotEqual), 
-                            new StandaloneStatement(new ProcValue(lcloneVal, locVal.WriteMethod,[new UnaryValue(new ProcValue(new ProcValue(new SelfValue(), locVal.ReadMethod), 'Clone'), UnaryOperator.Cast, locVal.Type)]))));
+                     new StandaloneStatement(new ProcValue(lcloneVal, locVal.WriteMethod,
+                     [new UnaryValue(new ProcValue(new ProcValue(new SelfValue(), locVal.ReadMethod), 'Clone'), UnaryOperator.Cast, locVal.Type)]))));
         end
         else
         begin
