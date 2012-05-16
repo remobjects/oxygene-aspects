@@ -124,7 +124,7 @@ begin
                                  end);
   //Equals
   var equalsMethod := aType.AddMethod('Equals', Services.GetType('System.Boolean'), false);
-  var equalsMethodParam := equalsMethod.AddParameter('obj', ParameterModifier.In, Services.GetType('System.Object'));
+  equalsMethod.AddParameter('obj', ParameterModifier.In, Services.GetType('System.Object'));
   equalsMethod.Visibility := Visibility.Public;
   equalsMethod.Virtual := VirtualMode.Override;
   var lBegin := new BeginStatement(); // begin
