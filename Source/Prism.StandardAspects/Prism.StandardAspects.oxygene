@@ -65,6 +65,9 @@
     <Reference Include="System.Xml.Linq">
       <HintPath>$(ProgramFiles)\Reference Assemblies\Microsoft\Framework\v3.5\System.Xml.Linq.dll</HintPath>
     </Reference>
+    <Reference Include="WindowsBase">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.0\WindowsBase.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CheckDisposedAttribute.pas" />
@@ -86,6 +89,7 @@
     <Compile Include="Properties\Settings.Designer.pas" />
     <Compile Include="SingletonAttribute.pas">
     </Compile>
+    <Compile Include="WPFInvokeRequiredAttribute.pas" />
     <Compile Include="WriteCachedPropertyAttribute.pas">
     </Compile>
   </ItemGroup>
@@ -93,4 +97,7 @@
     <Folder Include="Properties\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\RemObjects Software\Oxygene\RemObjects.Oxygene.targets" />
+  <PropertyGroup>
+    <PreBuildEvent />
+  </PropertyGroup>
 </Project>
