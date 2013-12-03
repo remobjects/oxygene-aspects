@@ -4,7 +4,7 @@ interface
 
 uses
   System.Windows.Forms,
-  Prism.StandardAspects,
+  RemObjects.Elements.StandardAspects,
   NUnit.Framework;
 
 type

@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build" ToolsVersion="4.0">
     <PropertyGroup>
-        <RootNamespace>PropertyInjectorConsoleApplication</RootNamespace>
-        <OutputType>Exe</OutputType>
-        <AssemblyName>PropertyInjectorConsoleApplication</AssemblyName>
+        <RootNamespace>RemObjects.Elements.StandardAspects.DependencyInjection</RootNamespace>
+        <OutputType>Library</OutputType>
+        <AssemblyName>RemObjects.Elements.StandardAspects.DependencyInjection</AssemblyName>
         <AllowGlobals>False</AllowGlobals>
         <AllowLegacyOutParams>False</AllowLegacyOutParams>
         <AllowLegacyCreate>False</AllowLegacyCreate>
-        <ApplicationIcon>Properties\App.ico</ApplicationIcon>
         <Configuration Condition="'$(Configuration)' == ''">Release</Configuration>
         <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
-        <ProjectGuid>{7BFE241B-6AC9-46E3-A950-8719F5CA57BC}</ProjectGuid>
+        <ProjectGuid>{F040DD91-4C32-4554-8995-6938B4F34AD6}</ProjectGuid>
         <RunPostBuildEvent>㏡</RunPostBuildEvent>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
@@ -27,10 +26,10 @@
         <Reference Include="mscorlib">
             <HintPath>mscorlib.dll</HintPath>
         </Reference>
-        <ProjectReference Include="..\..\RemObjects.Elements.StandardAspects.DependencyInjection\RemObjects.Elements.StandardAspects.DependencyInjection.oxygene">
-            <Project>{F040DD91-4C32-4554-8995-6938B4F34AD6}</Project>
-            <HintPath>..\..\RemObjects.Elements.StandardAspects.DependencyInjection\bin\Debug\RemObjects.Elements.StandardAspects.DependencyInjection.dll</HintPath>
-            <Name>RemObjects.Elements.StandardAspects.DependencyInjection</Name>
+        <ProjectReference Include="..\RemObjects.Elements.StandardAspects\RemObjects.Elements.StandardAspects.oxygene">
+            <Project>{FDFA9E51-2441-4785-9599-44A17D1B72C7}</Project>
+            <HintPath>$(Project)\..\RemObjects.Elements.StandardAspects\bin\Debug\RemObjects.Elements.StandardAspects.dll</HintPath>
+            <Name>RemObjects.Elements.StandardAspects</Name>
         </ProjectReference>
         <Reference Include="RemObjects.Oxygene.Cirrus">
             <HintPath>$(ProgramFiles)\CodeGear\Delphi RemObjects.Elements\Bin\RemObjects.Oxygene.Cirrus.dll</HintPath>
@@ -38,7 +37,7 @@
             <Private>True</Private>
         </Reference>
         <Reference Include="StructureMap">
-            <HintPath>..\..\lib\StructureMap.dll</HintPath>
+            <HintPath>..\lib\StructureMap.dll</HintPath>
             <Name>StructureMap.dll</Name>
             <Private>True</Private>
         </Reference>
@@ -62,8 +61,6 @@
         </Reference>
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="Program.pas"/>
-        <Content Include="Properties\App.ico"/>
         <Compile Include="Properties\AssemblyInfo.pas"/>
         <EmbeddedResource Include="Properties\Resources.resx">
             <Generator>ResXFileCodeGenerator</Generator>
@@ -73,6 +70,7 @@
             <Generator>SettingsSingleFileGenerator</Generator>
         </None>
         <Compile Include="Properties\Settings.Designer.pas"/>
+        <Compile Include="PropertyInjector.pas"/>
     </ItemGroup>
     <ItemGroup>
         <Folder Include="Properties\"/>

@@ -1,0 +1,156 @@
+----------------------------------------
+Timestamp: 29/05/2010 7:37:35 PM...
+ Entering OnLoad 
+
+----------------------------------------
+----------------------------------------
+Timestamp: 29/05/2010 7:37:35 PM...
+ Exiting OnLoad 
+
+----------------------------------------
+----------------------------------------
+Timestamp: 29/05/2010 7:37:35 PM...
+ HandlingInstanceID: cd4348f9-d06a-43e5-a4cb-24c5fb2c82bd
+An exception of type 'System.ApplicationException' occurred and was caught.
+---------------------------------------------------------------------------
+05/29/2010 15:37:35
+Type : System.ApplicationException, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+Message : This is buggy code
+Source : EnterpriseLibraryWebApplication
+Help link : 
+Data : System.Collections.ListDictionaryInternal
+TargetSite : Void SomeMethod()
+Stack Trace :    at EnterpriseLibraryWebApplication._Default.SomeMethod()
+   at EnterpriseLibraryWebApplication._Default.OnLoad(EventArgs e)
+
+Additional Info:
+
+MachineName : JOHNMOSHAKIS-PC
+TimeStamp : 29/05/2010 7:37:35 PM
+FullName : Microsoft.Practices.EnterpriseLibrary.ExceptionHandling, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+AppDomainName : e015318-1-129196352178203125
+ThreadIdentity : JohnMoshakis-PC\JohnMoshakis
+WindowsIdentity : JohnMoshakis-PC\JohnMoshakis
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 30/05/2010 3:23:55 AM...
+ Entering OnLoad 
+
+----------------------------------------
+----------------------------------------
+Timestamp: 30/05/2010 3:23:55 AM...
+ Exiting OnLoad 
+
+----------------------------------------
+----------------------------------------
+Timestamp: 30/05/2010 3:25:32 AM...
+ Entering OnLoad 
+
+----------------------------------------
+----------------------------------------
+Timestamp: 30/05/2010 3:27:34 AM...
+ Exiting OnLoad 
+
+----------------------------------------
+----------------------------------------
+Timestamp: 30/05/2010 3:28:15 AM...
+ Entering OnLoad 
+
+----------------------------------------
+----------------------------------------
+Timestamp: 30/05/2010 3:28:18 AM...
+ Exiting OnLoad 
+
+----------------------------------------
+----------------------------------------
+Timestamp: 02/06/2010 4:16:47 AM...
+ Entering .ctor 
+
+----------------------------------------
+----------------------------------------
+Timestamp: 02/06/2010 4:16:47 AM...
+ Exiting .ctor 
+
+----------------------------------------
+----------------------------------------
+Timestamp: 02/06/2010 4:16:47 AM...
+ Entering ThisRaisesAnException 
+
+----------------------------------------
+----------------------------------------
+Timestamp: 02/06/2010 4:16:50 AM...
+ Exiting ThisRaisesAnException 
+
+----------------------------------------
+----------------------------------------
+Timestamp: 02/06/2010 4:16:50 AM...
+ HandlingInstanceID: 36134472-c2e6-493a-9bac-ba15a547feeb
+An exception of type 'System.ApplicationException' occurred and was caught.
+---------------------------------------------------------------------------
+06/02/2010 00:16:50
+Type : System.ApplicationException, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+Message : crappy code
+Source : EnterpriseLibraryWebApplication
+Help link : 
+Data : System.Collections.ListDictionaryInternal
+TargetSite : System.String ThisRaisesAnException()
+Stack Trace :    at EnterpriseLibraryWebApplication.RestService.ThisRaisesAnException() in C:\develop\Moshine\Moshine.EnterpriseLibrary\EnterpriseLibraryWebApplication\RestService.pas:line 35
+
+Additional Info:
+
+MachineName : JOHNMOSHAKIS-PC
+TimeStamp : 02/06/2010 4:16:50 AM
+FullName : Microsoft.Practices.EnterpriseLibrary.ExceptionHandling, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+AppDomainName : e015318-3-129199257053027343
+ThreadIdentity : 
+WindowsIdentity : JohnMoshakis-PC\JohnMoshakis
+
+
+----------------------------------------
+----------------------------------------
+Timestamp: 03/06/2010 4:34:56 PM...
+ Entering .ctor 
+
+----------------------------------------
+----------------------------------------
+Timestamp: 03/06/2010 4:34:56 PM...
+ Exiting .ctor 
+
+----------------------------------------
+----------------------------------------
+Timestamp: 03/06/2010 4:34:56 PM...
+ Entering ThisRaisesAnException 
+
+----------------------------------------
+----------------------------------------
+Timestamp: 03/06/2010 4:34:56 PM...
+ Exiting ThisRaisesAnException 
+
+----------------------------------------
+----------------------------------------
+Timestamp: 03/06/2010 4:34:56 PM...
+ HandlingInstanceID: 8f3a75b3-5807-4b21-be05-d8ec61e26942
+An exception of type 'System.ApplicationException' occurred and was caught.
+---------------------------------------------------------------------------
+06/03/2010 12:34:56
+Type : System.ApplicationException, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+Message : crappy code
+Source : EnterpriseLibraryWebApplication
+Help link : 
+Data : System.Collections.ListDictionaryInternal
+TargetSite : System.String ThisRaisesAnException()
+Stack Trace :    at EnterpriseLibraryWebApplication.RestService.ThisRaisesAnException() in C:\develop\RemObjects.ElementsAspects\Source\RemObjects.Elements.StandardAspects.EnterpriseLibrary\EnterpriseLibraryWebApplication\RestService.pas:line 35
+
+Additional Info:
+
+MachineName : JOHNMOSHAKIS-PC
+TimeStamp : 03/06/2010 4:34:56 PM
+FullName : Microsoft.Practices.EnterpriseLibrary.ExceptionHandling, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+AppDomainName : 9fccac1a-1-129200564670566406
+ThreadIdentity : 
+WindowsIdentity : JohnMoshakis-PC\JohnMoshakis
+
+
+----------------------------------------

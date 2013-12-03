@@ -1,0 +1,106 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{656346D9-4656-40DA-A068-22D5425D4639}") = "AspectsUnitTest", "AspectsUnitTest\AspectsUnitTest.oxygene", "{1B29A181-3324-4D63-9D24-EC891CEE42C3}"
+EndProject
+Project("{656346D9-4656-40DA-A068-22D5425D4639}") = "EnterpriseLibraryWebApplication", "RemObjects.Elements.StandardAspects.EnterpriseLibrary\EnterpriseLibraryWebApplication\EnterpriseLibraryWebApplication.oxygene", "{4751D4ED-A8EF-4F09-B434-A5A7B505363A}"
+EndProject
+Project("{656346D9-4656-40DA-A068-22D5425D4639}") = "IDataErrorInfoWindowsApplication", "RemObjects.Elements.StandardAspects.Validation\Examples\IDataErrorInfoWindowsApplication\IDataErrorInfoWindowsApplication.oxygene", "{4ECFB929-B18A-4BC5-857D-FC1D0CA63BCF}"
+EndProject
+Project("{656346D9-4656-40DA-A068-22D5425D4639}") = "NotifyPropertyChangedWindowsApplication", "Examples\NotifyPropertyChangedWindowsApplication\NotifyPropertyChangedWindowsApplication.oxygene", "{3C88FA53-9025-4640-AEF1-AFAD3C723087}"
+EndProject
+Project("{656346D9-4656-40DA-A068-22D5425D4639}") = "RemObjects.Elements.StandardAspects", "RemObjects.Elements.StandardAspects\RemObjects.Elements.StandardAspects.oxygene", "{FDFA9E51-2441-4785-9599-44A17D1B72C7}"
+EndProject
+Project("{656346D9-4656-40DA-A068-22D5425D4639}") = "RemObjects.Elements.StandardAspects.DependencyInjection", "RemObjects.Elements.StandardAspects.DependencyInjection\RemObjects.Elements.StandardAspects.DependencyInjection.oxygene", "{F040DD91-4C32-4554-8995-6938B4F34AD6}"
+EndProject
+Project("{656346D9-4656-40DA-A068-22D5425D4639}") = "RemObjects.Elements.StandardAspects.EnterpriseLibrary", "RemObjects.Elements.StandardAspects.EnterpriseLibrary\RemObjects.Elements.StandardAspects.EnterpriseLibrary\RemObjects.Elements.StandardAspects.EnterpriseLibrary.oxygene", "{5D070E1F-7122-4926-A3B8-20D87F918677}"
+EndProject
+Project("{656346D9-4656-40DA-A068-22D5425D4639}") = "RemObjects.Elements.StandardAspects.EnterpriseLibrary.Aspects", "RemObjects.Elements.StandardAspects.EnterpriseLibrary\RemObjects.Elements.StandardAspects.EnterpriseLibrary.Aspects\RemObjects.Elements.StandardAspects.EnterpriseLibrary.Aspects.oxygene", "{30680D6A-4C32-4634-BA49-823ED255E897}"
+EndProject
+Project("{656346D9-4656-40DA-A068-22D5425D4639}") = "RemObjects.Elements.StandardAspects.Validation", "RemObjects.Elements.StandardAspects.Validation\RemObjects.Elements.StandardAspects.Validation\RemObjects.Elements.StandardAspects.Validation.oxygene", "{F806783B-51DF-472E-8C66-22E67E494CAC}"
+EndProject
+Project("{656346D9-4656-40DA-A068-22D5425D4639}") = "RemObjects.Elements.StandardAspects.Validation.Silverlight", "RemObjects.Elements.StandardAspects.Validation\RemObjects.Elements.StandardAspects.Validation.Silverlight\RemObjects.Elements.StandardAspects.Validation.Silverlight.oxygene", "{21F00F20-31B7-4E87-A80A-864BCB5EC6F2}"
+EndProject
+Project("{656346D9-4656-40DA-A068-22D5425D4639}") = "PropertyInjectorConsoleApplication", "Examples\PropertyInjectorConsoleApplication\PropertyInjectorConsoleApplication.oxygene", "{7BFE241B-6AC9-46E3-A950-8719F5CA57BC}"
+EndProject
+Project("{656346D9-4656-40DA-A068-22D5425D4639}") = "ValidationDomain", "RemObjects.Elements.StandardAspects.Validation\Examples\ValidationDomain\ValidationDomain.oxygene", "{60F1DCF6-2883-490F-9B0C-B1B57F8B895D}"
+EndProject
+Project("{656346D9-4656-40DA-A068-22D5425D4639}") = "ValidationDomain.Silverlight", "RemObjects.Elements.StandardAspects.Validation\Examples\ValidationDomain.Silverlight\ValidationDomain.Silverlight.oxygene", "{B2AA992B-49F1-4E90-AB56-F8E4A4B7A77E}"
+EndProject
+Project("{656346D9-4656-40DA-A068-22D5425D4639}") = "ValidationDomain.Tests", "RemObjects.Elements.StandardAspects.Validation\Examples\ValidationDomain.Tests\ValidationDomain.Tests.oxygene", "{DAAD5EEC-DDE8-44F2-8BDE-96443020E5FB}"
+EndProject
+Project("{656346D9-4656-40DA-A068-22D5425D4639}") = "ValidationMVCApplication", "RemObjects.Elements.StandardAspects.Validation\Examples\ValidationMVCApplication\ValidationMVCApplication.oxygene", "{EC6D9154-C674-4E7D-A1BE-632F480A6905}"
+EndProject
+Project("{656346D9-4656-40DA-A068-22D5425D4639}") = "ValidationSilverlightApplication", "RemObjects.Elements.StandardAspects.Validation\Examples\ValidationSilverlightApplication\ValidationSilverlightApplication.oxygene", "{3D0B4FC3-140E-4AE4-B09C-11ABEC8DB0CF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AnyCPU = Debug|AnyCPU
+		Release|AnyCPU = Release|AnyCPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1B29A181-3324-4D63-9D24-EC891CEE42C3}.Debug|AnyCPU.ActiveCfg = Debug
+		{1B29A181-3324-4D63-9D24-EC891CEE42C3}.Release|AnyCPU.ActiveCfg = Release
+		{1B29A181-3324-4D63-9D24-EC891CEE42C3}.Release|AnyCPU.Build.0 = Release
+		{4751D4ED-A8EF-4F09-B434-A5A7B505363A}.Debug|AnyCPU.ActiveCfg = Debug|AnyCPU
+		{4751D4ED-A8EF-4F09-B434-A5A7B505363A}.Debug|AnyCPU.Build.0 = Debug|AnyCPU
+		{4751D4ED-A8EF-4F09-B434-A5A7B505363A}.Release|AnyCPU.ActiveCfg = Release|AnyCPU
+		{4751D4ED-A8EF-4F09-B434-A5A7B505363A}.Release|AnyCPU.Build.0 = Release|AnyCPU
+		{4ECFB929-B18A-4BC5-857D-FC1D0CA63BCF}.Debug|AnyCPU.ActiveCfg = Debug
+		{4ECFB929-B18A-4BC5-857D-FC1D0CA63BCF}.Release|AnyCPU.ActiveCfg = Release
+		{4ECFB929-B18A-4BC5-857D-FC1D0CA63BCF}.Release|AnyCPU.Build.0 = Release
+		{3C88FA53-9025-4640-AEF1-AFAD3C723087}.Debug|AnyCPU.ActiveCfg = Debug
+		{3C88FA53-9025-4640-AEF1-AFAD3C723087}.Release|AnyCPU.ActiveCfg = Release
+		{3C88FA53-9025-4640-AEF1-AFAD3C723087}.Release|AnyCPU.Build.0 = Release
+		{FDFA9E51-2441-4785-9599-44A17D1B72C7}.Debug|AnyCPU.ActiveCfg = Debug
+		{FDFA9E51-2441-4785-9599-44A17D1B72C7}.Debug|AnyCPU.Build.0 = Debug
+		{FDFA9E51-2441-4785-9599-44A17D1B72C7}.Release|AnyCPU.ActiveCfg = Release
+		{FDFA9E51-2441-4785-9599-44A17D1B72C7}.Release|AnyCPU.Build.0 = Release
+		{F040DD91-4C32-4554-8995-6938B4F34AD6}.Debug|AnyCPU.ActiveCfg = Debug
+		{F040DD91-4C32-4554-8995-6938B4F34AD6}.Debug|AnyCPU.Build.0 = Debug
+		{F040DD91-4C32-4554-8995-6938B4F34AD6}.Release|AnyCPU.ActiveCfg = Release
+		{F040DD91-4C32-4554-8995-6938B4F34AD6}.Release|AnyCPU.Build.0 = Release
+		{5D070E1F-7122-4926-A3B8-20D87F918677}.Debug|AnyCPU.ActiveCfg = Debug
+		{5D070E1F-7122-4926-A3B8-20D87F918677}.Debug|AnyCPU.Build.0 = Debug
+		{5D070E1F-7122-4926-A3B8-20D87F918677}.Release|AnyCPU.ActiveCfg = Release
+		{5D070E1F-7122-4926-A3B8-20D87F918677}.Release|AnyCPU.Build.0 = Release
+		{30680D6A-4C32-4634-BA49-823ED255E897}.Debug|AnyCPU.ActiveCfg = Debug
+		{30680D6A-4C32-4634-BA49-823ED255E897}.Debug|AnyCPU.Build.0 = Debug
+		{30680D6A-4C32-4634-BA49-823ED255E897}.Release|AnyCPU.ActiveCfg = Release
+		{30680D6A-4C32-4634-BA49-823ED255E897}.Release|AnyCPU.Build.0 = Release
+		{F806783B-51DF-472E-8C66-22E67E494CAC}.Debug|AnyCPU.ActiveCfg = Debug|AnyCPU
+		{F806783B-51DF-472E-8C66-22E67E494CAC}.Debug|AnyCPU.Build.0 = Debug|AnyCPU
+		{F806783B-51DF-472E-8C66-22E67E494CAC}.Release|AnyCPU.ActiveCfg = Release|AnyCPU
+		{F806783B-51DF-472E-8C66-22E67E494CAC}.Release|AnyCPU.Build.0 = Release|AnyCPU
+		{21F00F20-31B7-4E87-A80A-864BCB5EC6F2}.Debug|AnyCPU.ActiveCfg = Debug|AnyCPU
+		{21F00F20-31B7-4E87-A80A-864BCB5EC6F2}.Debug|AnyCPU.Build.0 = Debug|AnyCPU
+		{21F00F20-31B7-4E87-A80A-864BCB5EC6F2}.Release|AnyCPU.ActiveCfg = Release|AnyCPU
+		{21F00F20-31B7-4E87-A80A-864BCB5EC6F2}.Release|AnyCPU.Build.0 = Release|AnyCPU
+		{7BFE241B-6AC9-46E3-A950-8719F5CA57BC}.Debug|AnyCPU.ActiveCfg = Debug
+		{7BFE241B-6AC9-46E3-A950-8719F5CA57BC}.Release|AnyCPU.ActiveCfg = Release
+		{7BFE241B-6AC9-46E3-A950-8719F5CA57BC}.Release|AnyCPU.Build.0 = Release
+		{60F1DCF6-2883-490F-9B0C-B1B57F8B895D}.Debug|AnyCPU.ActiveCfg = Debug
+		{60F1DCF6-2883-490F-9B0C-B1B57F8B895D}.Release|AnyCPU.ActiveCfg = Release
+		{60F1DCF6-2883-490F-9B0C-B1B57F8B895D}.Release|AnyCPU.Build.0 = Release
+		{B2AA992B-49F1-4E90-AB56-F8E4A4B7A77E}.Debug|AnyCPU.ActiveCfg = Debug|AnyCPU
+		{B2AA992B-49F1-4E90-AB56-F8E4A4B7A77E}.Debug|AnyCPU.Build.0 = Debug|AnyCPU
+		{B2AA992B-49F1-4E90-AB56-F8E4A4B7A77E}.Release|AnyCPU.ActiveCfg = Release|AnyCPU
+		{B2AA992B-49F1-4E90-AB56-F8E4A4B7A77E}.Release|AnyCPU.Build.0 = Release|AnyCPU
+		{DAAD5EEC-DDE8-44F2-8BDE-96443020E5FB}.Debug|AnyCPU.ActiveCfg = Debug
+		{DAAD5EEC-DDE8-44F2-8BDE-96443020E5FB}.Release|AnyCPU.ActiveCfg = Release
+		{DAAD5EEC-DDE8-44F2-8BDE-96443020E5FB}.Release|AnyCPU.Build.0 = Release
+		{EC6D9154-C674-4E7D-A1BE-632F480A6905}.Debug|AnyCPU.ActiveCfg = Debug|AnyCPU
+		{EC6D9154-C674-4E7D-A1BE-632F480A6905}.Debug|AnyCPU.Build.0 = Debug|AnyCPU
+		{EC6D9154-C674-4E7D-A1BE-632F480A6905}.Release|AnyCPU.ActiveCfg = Release|AnyCPU
+		{EC6D9154-C674-4E7D-A1BE-632F480A6905}.Release|AnyCPU.Build.0 = Release|AnyCPU
+		{3D0B4FC3-140E-4AE4-B09C-11ABEC8DB0CF}.Debug|AnyCPU.ActiveCfg = Debug|AnyCPU
+		{3D0B4FC3-140E-4AE4-B09C-11ABEC8DB0CF}.Debug|AnyCPU.Build.0 = Debug|AnyCPU
+		{3D0B4FC3-140E-4AE4-B09C-11ABEC8DB0CF}.Release|AnyCPU.ActiveCfg = Release|AnyCPU
+		{3D0B4FC3-140E-4AE4-B09C-11ABEC8DB0CF}.Release|AnyCPU.Build.0 = Release|AnyCPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

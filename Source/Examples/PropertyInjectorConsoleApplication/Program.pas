@@ -3,7 +3,7 @@
 interface
 
 uses
-  Prism.StandardAspects.DependencyInjection,
+  RemObjects.Elements.StandardAspects.DependencyInjection,
   System.Collections.Generic,
   System.Linq;
 

@@ -3,7 +3,7 @@
 interface
 
 uses
-  Prism.StandardAspects,
+  RemObjects.Elements.StandardAspects,
   NUnit.Framework;
 
 type
